@@ -23,7 +23,7 @@ const About = () => {
           With my background knowledge in Java, ReactJS. I am seeking for a career
           opportunity to fulfill the passion for being a amazing coder. Learning in school
           equips me with teamwork, flexibility, organizational ability. ready all time to
-          learn new things every day
+          learn new things every day.
         </div>
         <div className="about-content-title">Education</div>
         <div className="about-content-text">
