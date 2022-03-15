@@ -73,7 +73,7 @@ const Home = () => {
                 : 'var(--background-color-left)',
             }}
           >
-            Giới thiệu bản thân
+            About
           </NavLink>
         </div>
       </div>
@@ -87,11 +87,11 @@ const Home = () => {
         className="batman-between-title"
         style={{ display: between ? 'none' : 'block' }}
       >
-        Bấm vào đây
+        Click here
       </div>
       <div className={`home-right ${between ? 'home-right--click' : ' '}`}>
         <div className="home-right-header">
-          <div className="home-right-header-hi">Xin Chào ...</div>
+          <div className="home-right-header-hi">Hi ...</div>
         </div>
         <div className="home-right-main">
           <div
@@ -99,15 +99,17 @@ const Home = () => {
               between ? 'home-right-main-content--show' : ''
             }`}
           >
-            <div className="right-main-content-hi">Xin chào</div>
-            <div className="right-main-content-title">Tôi là Coder</div>
+            <div className="right-main-content-hi">Hello</div>
+            <div className="right-main-content-title">I'm Coder</div>
             <div className="right-main-content-end">
-              Tôi đam mê lập trình FrontEnd và tạo ra các hiệu ứng cho website
+              I am passionate about FrontEnd programming and website effects
             </div>
           </div>
         </div>
         <div className="home-right-footer">
-          <div className="home-right-footer-skill">Kỹ năng</div>
+          <NavLink to="/" className="home-right-footer-skill">
+            Project
+          </NavLink>
         </div>
       </div>
     </div>

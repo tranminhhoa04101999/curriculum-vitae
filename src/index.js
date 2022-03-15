@@ -5,7 +5,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/curriculum-vitae">
     <App />
   </BrowserRouter>,
   document.getElementById('root')
