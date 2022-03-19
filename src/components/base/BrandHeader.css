@@ -1,0 +1,158 @@
+.line-home {
+  height: 100px;
+  position: absolute;
+}
+.line-home::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 100px;
+  border-left: 2px solid;
+  height: 10px;
+  animation: slowLine ease 2s;
+}
+.line-home-title {
+  position: absolute;
+  top: 5px;
+  left: 150px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 4px 0;
+  border-radius: 4px;
+  text-align: center;
+  width: 100px;
+  color: var(--background-color-left);
+  background-color: var(--background-color-right);
+  animation: titleShow ease 2s;
+}
+@keyframes titleShow {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  70% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+.line-home-title::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -14px;
+  border: 7px solid;
+  border-color: transparent var(--background-color-right) transparent transparent;
+}
+.line-home-brand-face {
+  position: absolute;
+  top: 110px;
+  left: 100px;
+  animation: brandShow ease 1s;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1;
+  color: var(--background-color-right);
+}
+.line-home-brand-youtube {
+  position: absolute;
+  top: 150px;
+  transform: translateX(-50%);
+  left: 100px;
+  animation: brandShow ease 2s;
+  cursor: pointer;
+  z-index: 1;
+  color: var(--background-color-right);
+}
+.line-home-brand-instagram {
+  position: absolute;
+  top: 190px;
+  transform: translateX(-50%);
+  left: 100px;
+  animation: brandShow ease 3s;
+  cursor: pointer;
+  z-index: 1;
+  color: var(--background-color-right);
+}
+@keyframes brandShow {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.line-home--click.line-home::before {
+  height: 100%;
+  animation: slowDowLine ease 2s;
+}
+@keyframes slowDowLine {
+  from {
+    height: 10px;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes slowLine {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 10px;
+  }
+}
+.line-home-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -10px;
+  left: 100px;
+  transform: translateX(-50%);
+  cursor: pointer;
+  animation: slow ease 2s;
+}
+.line-home-icon img {
+  transform: rotate(10deg);
+  animation: batman 2s linear 1s infinite alternate;
+}
+.line-home-icon-click.line-home-icon {
+  top: 220px;
+  animation: slowDown ease 2s;
+}
+@keyframes batman {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+@keyframes slow {
+  from {
+    top: 120px;
+  }
+
+  to {
+    top: -10px;
+  }
+}
+@keyframes slowDown {
+  from {
+    top: -10px;
+  }
+
+  to {
+    top: 220px;
+  }
+}

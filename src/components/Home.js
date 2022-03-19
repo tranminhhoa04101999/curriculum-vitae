@@ -1,115 +1,92 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import batmanLogin from '../assets/img/batmanlogo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import avt from '../assets/img/avtcat.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import BrandHeader from './base/BrandHeader';
+import Between from './base/Between';
+
 const Home = () => {
-  const [iconClick, setIconClick] = useState(false);
+  const [close, setClose] = useState(false);
+  const navigate = useNavigate();
   const [between, setBetween] = useState(false);
-  useEffect(() => {
-    setIconClick(true);
-  }, []);
+
+  const projectHandler = () => {
+    setClose(true);
+    setTimeout(() => {
+      navigate('/project');
+    }, 1000);
+  };
   const betweenOnclick = () => {
     setBetween(true);
   };
-
   return (
-    <div className="container-home">
-      <div className="home-left">
-        <div className="home-header">
-          <div className="container-line-home">
-            <div className={`${iconClick && 'line-home--click'} line-home`}></div>
-            <a
-              href="https://www.facebook.com/hoatran0410/"
-              rel="noreferrer"
-              target={'_blank'}
-              className="line-home-brand-face"
-              style={{ display: iconClick ? 'block' : 'none' }}
-            >
-              <FontAwesomeIcon icon={faFacebook} size="3x" />
-            </a>
-            <a
-              className="line-home-brand-youtube"
-              style={{ display: iconClick ? 'block' : 'none' }}
-              href="https://github.com/tranminhhoa04101999"
-              rel="noreferrer"
-              target={'_blank'}
-            >
-              <FontAwesomeIcon icon={faGithub} size="3x" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/h%C3%B2a-tr%E1%BA%A7n-80b779218/"
-              rel="noreferrer"
-              target={'_blank'}
-              className="line-home-brand-instagram"
-              style={{ display: iconClick ? 'block' : 'none' }}
-            >
-              <FontAwesomeIcon icon={faLinkedinIn} size="3x" />
-            </a>
-            <div className={`${iconClick && 'line-home-icon-click'} line-home-icon`}>
-              <img src={batmanLogin} alt="" width={50} height={50} />
+    <div className={`grid container-home ${close ? 'container-home--close' : ''}`}>
+      <div className="row no-gutters">
+        <div className="col l-6">
+          <div className="home-left">
+            <BrandHeader />
+            <div className="home-left-main">
+              <div
+                className={`home-left-main-content ${
+                  between ? 'home-left-main-content--show' : ''
+                }`}
+              >
+                <img src={avt} alt="" />
+              </div>
+            </div>
+            <div className="home-left-footer">
+              <div className="home-left-footer-name">Trần Minh Hòa</div>
+              <NavLink
+                to="/about"
+                className="home-left-footer-about"
+                style={{
+                  color: between
+                    ? 'var(--background-color-right)'
+                    : 'var(--background-color-left)',
+                }}
+              >
+                About
+              </NavLink>
             </div>
           </div>
         </div>
-        <div className="home-left-main">
-          <div
-            className={`home-left-main-content ${
-              between ? 'home-left-main-content--show' : ''
-            }`}
-          >
-            <img src={avt} alt="" />
-          </div>
-        </div>
-        <div className="home-left-footer">
-          <div className="home-left-footer-name">Trần Minh Hòa</div>
-          <NavLink
-            to="/about"
-            className="home-left-footer-about"
-            style={{
-              color: between
-                ? 'var(--background-color-right)'
-                : 'var(--background-color-left)',
-            }}
-          >
-            About
-          </NavLink>
-        </div>
-      </div>
-      <div
-        className={`batman-between ${between ? 'batman-between--click' : ''}`}
-        onClick={betweenOnclick}
-      >
-        <img src={batmanLogin} alt="" />
-      </div>
-      <div
-        className="batman-between-title"
-        style={{ display: between ? 'none' : 'block' }}
-      >
-        Click here
-      </div>
-      <div className={`home-right ${between ? 'home-right--click' : ' '}`}>
-        <div className="home-right-header">
-          <div className="home-right-header-hi">Hi ...</div>
-        </div>
-        <div className="home-right-main">
-          <div
-            className={`home-right-main-content ${
-              between ? 'home-right-main-content--show' : ''
-            }`}
-          >
-            <div className="right-main-content-hi">Hello</div>
-            <div className="right-main-content-title">I'm Coder</div>
-            <div className="right-main-content-end">
-              I am passionate about FrontEnd programming and website effects
+        <div className="col l-6">
+          <div className={`home-right ${between ? 'home-right--click' : ' '}`}>
+            <div className="home-right-header">
+              <div className="home-right-header-hi">Hi ...</div>
+            </div>
+            <div className="home-right-main">
+              <div
+                className={`home-right-main-content ${
+                  between ? 'home-right-main-content--show' : ''
+                }`}
+              >
+                <div className="right-main-content-hi">Hello</div>
+                <div className="right-main-content-title">I'm Coder</div>
+                <div className="right-main-content-end">
+                  I am passionate about FrontEnd programming and website effects
+                </div>
+              </div>
+            </div>
+            <div className="home-right-footer">
+              <div className="home-right-footer-skill" onClick={() => projectHandler()}>
+                Project
+              </div>
             </div>
           </div>
         </div>
-        <div className="home-right-footer">
-          <NavLink to="/" className="home-right-footer-skill">
-            Project
-          </NavLink>
+        <Between
+          between={between}
+          betweenOnclick={betweenOnclick}
+          logo={batmanLogin}
+          spin={true}
+        />
+        <div
+          className="batman-between-title"
+          style={{ display: between ? 'none' : 'block' }}
+        >
+          Click here
         </div>
       </div>
     </div>

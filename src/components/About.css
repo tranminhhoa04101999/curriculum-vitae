@@ -156,73 +156,7 @@
   z-index: 1;
   opacity: 0.5;
 }
-.about-back {
-  position: absolute;
-  top: 0;
-  right: 50%;
-  transform: translateX(50%);
-  margin-top: 10px;
-  cursor: pointer;
-}
-.backhover-left {
-  position: absolute;
-  top: 8px;
-  right: 20px;
-  display: flex;
-}
-.backhover-left-img {
-  width: 30px;
-  height: 20px;
-  transform: rotate(90deg) scale(0.1);
-  margin: 0 10px;
-  animation: scalebat 2s linear infinite;
-  display: none;
-}
-@keyframes scalebat {
-  0% {
-    transform: rotate(90deg) scale(0.1);
-  }
-  10% {
-    transform: rotate(90deg) scale(1);
-  }
-  50%,
-  100% {
-    transform: rotate(90deg) scale(0.1);
-  }
-}
-.about-back:hover .backhover-left-img {
-  display: block;
-}
-/* hover right */
-.backhover-right {
-  position: absolute;
-  top: 8px;
-  left: 20px;
-  display: flex;
-}
-.backhover-right-img {
-  width: 30px;
-  height: 20px;
-  transform: rotate(270deg) scale(0.1);
-  margin: 0 10px;
-  animation: scalebat2 2s linear infinite;
-  display: none;
-}
-@keyframes scalebat2 {
-  0% {
-    transform: rotate(270deg) scale(0.1);
-  }
-  10% {
-    transform: rotate(270deg) scale(1);
-  }
-  50%,
-  100% {
-    transform: rotate(270deg) scale(0.1);
-  }
-}
-.about-back:hover .backhover-right-img {
-  display: block;
-}
+
 .container-about video {
   position: absolute;
   z-index: 0;
