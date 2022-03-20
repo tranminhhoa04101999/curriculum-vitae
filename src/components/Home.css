@@ -1,18 +1,26 @@
 .container-home {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+}
+/* close */
+.container-home--close {
+  animation: closeHome 1s ease-in-out forwards;
+}
+@keyframes closeHome {
+  0% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
 }
 /* HOME LEFT */
 .home-left {
   width: 100%;
   height: 100%;
   background-color: var(--background-color-left);
-}
-
-.container-line-home {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 25%;
 }
 
 .home-left-main {
@@ -178,18 +186,3 @@
   cursor: pointer;
 }
 /*  */
-
-/* close */
-.container-home--close {
-  animation: closeHome 1s ease-in-out forwards;
-}
-@keyframes closeHome {
-  0% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  100% {
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-}

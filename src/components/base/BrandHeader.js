@@ -15,7 +15,7 @@ const BrandHeader = (props) => {
   }, []);
   const { themeIcon, logo } = props;
   return (
-    <div className="home-header">
+    <div className="home-header-brand">
       <div className="container-line-home">
         <div
           className={`${iconClick && 'line-home--click'} line-home`}

@@ -47,7 +47,10 @@ const Project = () => {
       <ButtonBack logo={batwhite} theme="--text-color-right" />
 
       <div className="row no-gutters project-row">
-        <div className="col l-10 l-o-1 project-content" onWheel={onWheelHandler}>
+        <div
+          className="col l-10 l-o-1 m-10 m-o-1 project-content"
+          onWheel={onWheelHandler}
+        >
           {test.map((item, index) => (
             <div key={index} className="project-card">
               <span className="project-card__title">Todo List</span>

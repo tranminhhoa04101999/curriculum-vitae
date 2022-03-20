@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div className={`grid container-home ${close ? 'container-home--close' : ''}`}>
       <div className="row no-gutters">
-        <div className="col l-6">
+        <div className="col l-6 m-6 c-12">
           <div className="home-left">
             <BrandHeader />
             <div className="home-left-main">
@@ -51,7 +51,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="col l-6">
+        <div className="col l-6 m-6 c-12">
           <div className={`home-right ${between ? 'home-right--click' : ' '}`}>
             <div className="home-right-header">
               <div className="home-right-header-hi">Hi ...</div>
